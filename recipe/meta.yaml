@@ -28,9 +28,11 @@ requirements:
   host:
     - python
     - llvm-openmp
+    - lhapdf
   run:
     - python
     - llvm-openmp
+    - lhapdf
 
 about:
   home: "https://nnlojet.hepforge.org"
