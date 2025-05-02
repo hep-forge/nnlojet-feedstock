@@ -3,13 +3,13 @@ About nnlojet-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nnlojet-feedstock/blob/main/LICENSE.txt)
 
-Home: https://lhapdf.hepforge.org
+Home: https://nnlojet.hepforge.org
 
 Package license: GPL-3.0
 
-Summary: LHAPDF is the standard tool for evaluating parton distribution functions (PDFs) in high-energy physics.
+Summary: A parton-level event generator for jet cross sections at NNLO QCD accuracy
 
-LHAPDF is the standard tool for evaluating parton distribution functions (PDFs) in high-energy physics. PDFs encode the flavour and momentum structure of composite particles, such as protons, pions and nuclei; most cross-section calculations are based on parton-level matrix-elements which must be connected to the real interacting particles, hence PDFs are an essential ingredient of phenomenological and experimental studies at hadron and heavy-ion colliders (e.g. LHC, HERA, Tevatron, EIC, FCC) and in cosmic-ray physics.
+NNLOJET is a parton-level event generator for jet cross sections using the antenna subtraction method. It can be used to compute a large number of jet cross sections and related observables in ee and pp collisions at next-to-next-to-leading order in QCD. NNLOJET contains routines for Monte Carlo phase-space integration, event handling and analysis.
 
 
 Current build status
