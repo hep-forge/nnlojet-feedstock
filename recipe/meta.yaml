@@ -1,5 +1,5 @@
 {% set versions = {
-    "6.5.4": "2443a4b32cc3b0597c8248bd6e25703ace9c91a7a253c5f60b1b5428ef9c869e"
+    "1.0.0": "b02013922387cf37745487d23b271eaae257c8af76bb3cca6bbf885dd8139e74"
 } %}
 
 
@@ -8,11 +8,11 @@
 {% set version = version|string %}
 
 package:
-  name: {{ environ.get('ANACONDA_PACKAGE', "lhapdf")|string|lower }}
+  name: {{ environ.get('ANACONDA_PACKAGE', "nnlojet")|string|lower }}
   version: {{ environ.get('ANACONDA_VERSION', version)|replace("-", ".") }}
 
 source:
-  url: "https://lhapdf.hepforge.org/downloads/?f=LHAPDF-{{ version }}.tar.gz"
+  url: "https://nnlojet.hepforge.org/nnlojet-v{{ version }}.tar.gz"
   {% if versions.get(version, None) %}
   sha256: {{ versions.get(version) }}
   {% endif %}
@@ -22,25 +22,21 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
     - python
-    - cython >=0.24
-    - gnuconfig
     - make
     - cmake
-    - automake
-    - autoconf
-    - libtool
   host:
     - python
-    - cython >=0.24
+    - llvm-openmp
   run:
     - python
+    - llvm-openmp
 
 about:
-  home: "https://lhapdf.hepforge.org"
+  home: "https://nnlojet.hepforge.org"
   license: "GPL-3.0"
-  summary: "LHAPDF is the standard tool for evaluating parton distribution functions (PDFs) in high-energy physics."
+  summary: "A parton-level event generator for jet cross sections at NNLO QCD accuracy"
   description: |
-    LHAPDF is the standard tool for evaluating parton distribution functions (PDFs) in high-energy physics. PDFs encode the flavour and momentum structure of composite particles, such as protons, pions and nuclei; most cross-section calculations are based on parton-level matrix-elements which must be connected to the real interacting particles, hence PDFs are an essential ingredient of phenomenological and experimental studies at hadron and heavy-ion colliders (e.g. LHC, HERA, Tevatron, EIC, FCC) and in cosmic-ray physics.
+    NNLOJET is a parton-level event generator for jet cross sections using the antenna subtraction method. It can be used to compute a large number of jet cross sections and related observables in ee and pp collisions at next-to-next-to-leading order in QCD. NNLOJET contains routines for Monte Carlo phase-space integration, event handling and analysis.
 
 extra:
   recipe-maintainers:

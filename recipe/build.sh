@@ -1,12 +1,9 @@
 #! /usr/bin/bash
 
-mkdir build-scripts
-cd build-scripts
+mkdir build
+cd build
 
-cmake $RECIPE_DIR/scripts
-cd ..
-
-./configure --prefix=$PREFIX
+cmake .. -DLHAPDF_ROOT_DIR=${PREFIX} -DCMAKE_INSTALL_PREFIX=$PREFIX -DOPENMP=ON -DDOKAN=OFF
 
 make -j$(nproc)
 make install
