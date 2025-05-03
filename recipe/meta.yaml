@@ -22,17 +22,18 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
     - {{ compiler('gfortran') }}
-    #- python
     - make
     - cmake
   host:
-    #- python
     - llvm-openmp
     - lhapdf
+    - pineappl
+#    - applfast (public release?)
   run:
-    #- python
+    - pineappl
     - llvm-openmp
     - lhapdf
+#    - applfast (public release?)
 
 about:
   home: "https://nnlojet.hepforge.org"
