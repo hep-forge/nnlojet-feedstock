@@ -22,7 +22,7 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
-    - {{ compiler('gfortran') }}
+    - {{ compiler('fortran') }}
     - make
     - cmake
   host:
